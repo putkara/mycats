@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet My Cats</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #ffffff;
+      background-size: 20px 20px;
+      background-image:
+        linear-gradient(90deg, transparent 19px, #5a5757 19px, #e0e0e0 20px),
+        linear-gradient(transparent 19px, #5a5757 19px, #e0e0e0 20px);
+    }
+
+    header {
+      background-color: #5a5757;
+      color: #ffffff;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.695);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    header h1 {
+      margin-bottom: 0;
+      font-size: 1.5em;
+      font-size: 70px;
+    }
+
+    header img {
+      vertical-align: bottom;
+      width: 100px;
+      height: auto;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .cat {
+      width: calc(25% - 20px);
+      margin: 10px;
+      overflow: hidden;
+      background: #5a5757;
+      border-color: rgb(0, 0, 0);
+      border-radius: 20px;
+      box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.695);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat:hover {
+      transform: scale(1.05);
+    }
+
+    .cat h2 {
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .cat img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border-style: solid;
+      border-color: white;
+      flex-grow: 1;
+    }
+
+    .cat-description {
+      padding: 10px;
+      height: 120px;
+      overflow: hidden;
+      text-align: justify;
+    }
+
+    @media only screen and (max-width: 768px) {
+      header {
+        height: auto;
+      }
+
+      header h1 {
+        font-size: 1.2em;
+      }
+
+      header img {
+        width: 100px;
+      }
+
+      .cat {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .cat {
+        width: calc(100% - 20px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Meet My Cats</h1>
+    <img src="images/cat.gif" alt="cat" width="150px" height="auto" frameBorder="0">
+    
+  </header>
+
+  <div class="container">
+    <div class="cat" id="cat1" onclick="toggleDescription('cat1')">
+      <h2>Nyan</h2>
+      <img src="images/nyan1.jpg" alt="Nyan">
+      <div class="cat-description">
+        <p>Nyan is a playful and energetic cat. He likes to find cozy spots for napping and enjoys gentle head
+          scratches.</p>
+      </div>
+    </div>
+
+    <div class="cat" id="cat2" onclick="toggleDescription('cat2')">
+      <h2>Orion</h2>
+      <img src="images/orion.jpg" alt="Orion">
+      <div class="cat-description">
+        <p>Orion is a fluffy and curious cat. He enjoys exploring the house and sitting by the window to watch birds.
+        </p>
+      </div>
+    </div>
+
+    <div class="cat" id="cat3" onclick="toggleDescription('cat3')">
+      <h2>Nebula</h2>
+      <img src="images/nebula.jpg" alt="Nebula">
+      <div class="cat-description">
+        <p>Nebula is a playful cat. He loves chasing laser pointers and cuddling on the couch.</p>
+      </div>
+    </div>
+
+    <div class="cat" id="cat4" onclick="toggleDescription('cat4')">
+      <h2>Blazar</h2>
+      <img src="images/blazar.jpg" alt="Blazar">
+      <div class="cat-description">
+        <p>Blazar is a playful and mischievous cat. He loves playing with toys and entertaining everyone.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDescription(catId) {
+      const catDescription = document.getElementById(catId).getElementsByClassName('cat-description')[0];
+      catDescription.style.height = catDescription.style.height === '120px' ? 'auto' : '120px';
+    }
+  </script>
+</body>
+
+</html>
